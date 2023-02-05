@@ -1,0 +1,423 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  outline: none;
+  font-size: 16px;
+  font-family: 'Titillium Web', sans-serif;
+  box-sizing: border-box;
+  color: #0a3871;
+}
+
+header {
+  height: 10px;
+  margin: 0 auto 2em auto;
+}
+
+header img {
+  width: 60px;
+  margin: 7px 0 0 0;
+  z-index: 5;
+  position: absolute;
+}
+
+body {
+  background-color: #f3f5fc;
+}
+
+nav {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+#base {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 65% 34%;
+  gap: 1%;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    'message result'
+    'footer footer';
+  align-items: center;
+  justify-self: center;
+  align-content: center;
+  justify-content: center;
+}
+
+#message {
+  grid-area: message;
+  /* border: solid 1px blue; */
+  align-items: center;
+
+  height: 580px;
+  display: grid;
+}
+
+#forms {
+  margin: auto 2rem;
+  display: grid;
+  grid-template-columns: 49% 49%;
+  grid-template-rows: auto auto 1fr 1fr;
+  gap: 2%;
+  grid-template-areas:
+    'alerta alerta'
+    'input input'
+    'encriptar desencriptar'
+    'limpiar limpiar';
+}
+
+#input {
+  grid-area: input;
+  /* border: solid 1px blue;  */
+  height: 400px;
+  background-color: #f3f5fc;
+  border-color: #d4d4d6;
+  border-style: dotted;
+  font-size: 1.1em;
+  font-weight: 500;
+  padding: 1em;
+  resize: none;
+  border-radius: 7px;
+
+}
+
+.ingresar {
+  width: 75%;
+  margin: 0 auto;
+  cursor: pointer;
+  padding: 0.2em 0;
+}
+
+#encriptar {
+  grid-area: encriptar;
+  font-size: 1.2em;
+  background-color: #0a3871;
+  border: 1px solid #0a3871;
+  border-radius: 7px;
+  color: white;
+  transition: all 0.2s ease;
+}
+
+#desencriptar {
+  grid-area: desencriptar;
+  font-size: 1.2em;
+  background-color: #0a3871;
+  border: 1px solid #0a3871;
+  border-radius: 7px;
+  color: white;
+  transition: all 0.2s ease;
+}
+
+#encriptar:hover,
+#desencriptar:hover {
+  background-color: white;
+  color: #0a3871;
+  border: 1px solid #0a3871;
+  transition: all 0.2s ease;
+}
+
+#limpiar {
+  grid-area: limpiar;
+  margin: 0 auto;
+  border: none;
+  border-radius: 7px;
+  background-color: #d8dfe8;
+  font-size: 1.2em;
+  border: 1px solid #cdd5df;
+  transition: all 0.2s ease;
+}
+
+#limpiar:hover,
+#copiar:hover {
+  background-color: white;
+  color: #0a3871;
+  transition: all 0.2s ease;
+}
+
+#alerta {
+  grid-area: alerta;
+  font-size: 0.8em;
+  transition: color 0.1s linear 0.2s;
+  font-weight: 600;
+}
+
+#result {
+  grid-area: result;
+  align-items: center;
+  align-items: center;
+  width: 95%;
+  height: 580px;
+  /* border: solid 1px blue;  */
+}
+
+#square {
+  display: grid;
+  grid-template-columns: 98%;
+  grid-template-rows: 10% 65% 20%;
+  gap: 2%;
+  grid-template-areas:
+    'tituloEn'
+    'msgDes'
+    'squareMessage';
+  width: 95%;
+  margin: 1rem auto;
+  background-color: white;
+  background-image: url('img/nene.png');
+  transition: 0.35s;
+  
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: 50% 25%;
+  height: 95%;
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+  border-radius: 22px;
+  border: none;
+
+  justify-items: baseline;
+  align-items: baseline;
+}
+
+#tituloEn {
+  grid-area: tituloEn;
+  font-style: italic;
+  display: none;
+  margin: 1rem;
+}
+
+#squareMessage {
+  margin: auto;
+  grid-area: squareMessage;
+  align-items: baseline;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+
+  display: block;
+}
+
+#vacio {
+  text-align: center;
+  align-self: flex-start;
+  margin: 0 auto;
+  font-weight: bolder;
+}
+
+#msgDes {
+  grid-area: msgDes;
+  display: none;
+  border: none;
+  /* border: solid 1px blue; */
+  margin: 0 auto;
+  align-items: center;
+  padding: 0.7em;
+  width: 90%;
+  height: 100%;
+  font-size: 1.1em;
+  font-weight: 600;
+  resize: none;
+  transition: opacity 0.35s;
+  opacity: 0;
+}
+
+#copiar {
+  display: none;
+  margin: 1rem auto 0 auto;
+  border: none;
+  border-radius: 7px;
+  background-color: #d8dfe8;
+  font-size: 1.2em;
+  border: 1px solid #cdd5df;
+  transition: all 0.2s ease;
+}
+
+#copiado {
+  display: none;
+  color: #fa4700;
+  font-weight: bolder;
+  margin: 0.5rem auto 0.3rem auto;
+  transition: opacity 0.35s;
+  opacity: 0;
+}
+
+#footer {
+  margin: 2rem 0 0 0;
+  grid-area: footer;
+  background-color: #0a3871;
+  height: 50px;
+  display: flex;
+}
+
+#footer p {
+  margin: auto;
+  color: white;
+}
+
+/* ########################## MEDIA QUERIES ######################### */
+
+@media (max-width: 768px) {
+  #base {
+    grid-template-columns: 98%;
+    gap: 2%;
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas:
+      'message'
+      'result'
+      'footer';
+    align-items: center;
+    justify-self: center;
+    align-content: center;
+    justify-content: center;
+  }
+
+  #result {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 250px;
+  }
+
+  #square {
+    display: grid;
+    grid-template-columns: 98%;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 2%;
+    grid-template-areas:
+      'tituloEn'
+      'msgDes'
+      'squareMessage';
+    width: 94%;
+    margin: auto;
+    background-color: white;
+    background-image: url('img/nene.png');
+    background-repeat: no-repeat;
+    background-size: 25%;
+    background-position: 50% 25%;
+    height: 95%;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    border-radius: 22px;
+    border: none;
+
+    justify-items: baseline;
+    align-items: baseline;
+  }
+
+  #message {
+    grid-area: message;
+    /* border: solid 1px blue; */
+
+    height: 500px;
+    display: grid;
+  }
+
+  #forms {
+    align-items: center;
+    justify-self: center;
+    align-content: center;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 48% 48%;
+    grid-template-rows: auto auto 1fr 1fr;
+    gap: 4%;
+    grid-template-areas:
+      'alerta alerta'
+      'input input'
+      'encriptar desencriptar'
+      'limpiar limpiar';
+    width: 94%;
+  }
+  #input {
+    height: 250px;
+  }
+
+  #alerta {
+    grid-area: alerta;
+    font-size: 0.8em;
+    transition: color 0.1s linear 0.2s;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  #msgDes {
+    grid-area: msgDes;
+    display: none;
+    border: none;
+    /* border: solid 1px blue; */
+    margin: 0 auto;
+    align-items: center;
+    padding: 0.7em;
+    width: 90%;
+    height: 100%;
+    font-size: 1em;
+    font-weight: 600;
+    resize: none;
+  }
+}
+
+@media (max-width: 450px) {
+  header {
+    height: 20px;
+    margin: 0 auto 2em auto;
+  }
+
+  nav {
+    text-align: center;
+    font-size: 1.5rem;
+    padding-top: 1.6em;
+  }
+
+  #limpiar,
+  #copiar,
+  #encriptar,
+  #desencriptar {
+    font-size: 1em;
+  }
+
+  #input {
+    font-size: 0.9em;
+    height: 150px;
+  }
+
+  @media (max-width: 370px) {
+    nav {
+      font-size: 1.2em;
+    }
+    #limpiar,
+    #copiar,
+    #encriptar,
+    #desencriptar {
+      font-size: 0.8em;
+    }
+  }
+
+  #square {
+    height: 220px;
+    background-size: 30%;
+  }
+
+  #input {
+    font-size: 0.9em;
+    height: 90px;
+  }
+  #msgDes {
+    font-size: 0.9em;
+  }
+
+  #message {
+    height: 260px;
+  }
+  #result {
+    align-items: center;
+    justify-self: center;
+    align-content: center;
+    justify-content: center;
+  }
+
+  #vacio {
+    font-size: 0.8em;
+  }
+
+  #footer {
+    margin: 0;
+  }
+}

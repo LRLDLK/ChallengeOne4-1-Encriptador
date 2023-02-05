@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Encripador</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <img src="img/logo.png" alt="logo Alura" />
+      <nav>¡ Bienvenido al Encriptador ONE !</nav>
+    </header>
+
+    <main>
+      <section id="base">
+        <section id="message">
+          <article id="forms">
+            <div id="alerta">
+              *Ingrese el mensaje (Letras del alfabeto (a-z) en minúscula, sin
+              tildes y sin caracteres especiales)
+            </div>
+
+            <textarea
+              id="input"
+              placeholder="Ingrese el texto a encriptar/desencriptar"
+            ></textarea>
+
+            <button
+              id="encriptar"
+              class="ingresar"
+              type="button"
+              onclick="encriptar()"
+            >
+              Encriptar
+            </button>
+
+            <button
+              id="desencriptar"
+              class="ingresar"
+              type="button"
+              onclick="desencriptar()"
+            >
+              Desencriptar
+            </button>
+            <button id="limpiar" class="ingresar" onclick="limpiar()">
+              Limpiar
+            </button>
+          </article>
+        </section>
+
+        <section id="result">
+          <div id="square">
+            <div id="tituloEn"></div>
+            <textarea id="msgDes"></textarea>
+            <div id="squareMessage">
+              <p id="vacio">Ningún mensaje fue encontrado</p>
+              <button
+                id="copiar"
+                class="ingresar"
+                type="button"
+                onclick="copiar()"
+              >
+                Copiar
+              </button>
+              <div id="copiado">¡ Texto Copiado !</div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+    <footer id="footer">
+      <p>Lorena De La Riva</p>
+    </footer>
+
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>
