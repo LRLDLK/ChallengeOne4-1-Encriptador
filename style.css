@@ -295,7 +295,11 @@ nav {
     justify-content: center;
     height: 100%;
   }
+  #body {
 
+    margin: auto auto;
+    width: 100%;
+}
   #result {
     align-items: center;
     align-content: center;
@@ -443,7 +447,7 @@ nav {
 
   #body {
 
-      margin: 0 auto;
+      margin: auto auto;
       width: 100%;
   }
 }
