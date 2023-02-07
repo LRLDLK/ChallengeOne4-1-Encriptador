@@ -24,7 +24,7 @@ function copiar() {
     square.style.backgroundImage = "url('img/nene.png')"
     document.getElementById('vacio').style.display = 'inline'
     copiarBtn.style.display = 'none'
-  }, 1500)
+  }, 1000)
   msgDescifrar.value = '';
   titulo.style.display = 'none'
   msgDescifrar.style.opacity = 0;

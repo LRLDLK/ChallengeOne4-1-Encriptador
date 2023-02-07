@@ -9,39 +9,63 @@
   color: #0a3871;
 }
 
-header {
-  height: 10px;
-  margin: 0 auto 2em auto;
+body {
+  background-color: #f3f5fc;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
-header img {
+#body {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas:
+    'header'
+    'main';
+    margin: 0 auto 1rem auto;
+    width: 100%;
+}
+
+header {
+  grid-area: header;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto 2em auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#logoAlura {
   width: 60px;
-  margin: 7px 0 0 0;
-  z-index: 5;
+  left: -16px;
+  top: 4px;
   position: absolute;
 }
 
-body {
-  background-color: #f3f5fc;
+main {
+  grid-area: main;
+  margin-top: 1rem;
+  align-content: center;
+  align-items: center;
+  align-self: center;
 }
 
 nav {
-  text-align: center;
+  text-align: center; 
   font-size: 1.5rem;
+  justify-self: center;
+    margin: auto auto 0 auto;
 }
 
 #base {
   padding: 1rem;
   display: grid;
-  grid-template-columns: 65% 34%;
-  gap: 1%;
-  grid-template-rows: auto 1fr;
-  grid-template-areas:
-    'message result'
-    'footer footer';
-  align-items: center;
+  grid-template-columns: 65% 35%;
+  grid-template-rows: auto;
+  grid-template-areas: 'message result';
   justify-self: center;
-  align-content: center;
   justify-content: center;
 }
 
@@ -49,9 +73,9 @@ nav {
   grid-area: message;
   /* border: solid 1px blue; */
   align-items: center;
-
   height: 580px;
   display: grid;
+ 
 }
 
 #forms {
@@ -79,7 +103,6 @@ nav {
   padding: 1em;
   resize: none;
   border-radius: 7px;
-
 }
 
 .ingresar {
@@ -137,7 +160,7 @@ nav {
 
 #alerta {
   grid-area: alerta;
-  font-size: 0.8em;
+  font-size: 1em;
   transition: color 0.1s linear 0.2s;
   font-weight: 600;
 }
@@ -165,7 +188,7 @@ nav {
   background-color: white;
   background-image: url('img/nene.png');
   transition: 0.35s;
-  
+
   background-repeat: no-repeat;
   background-size: 70%;
   background-position: 50% 25%;
@@ -173,7 +196,6 @@ nav {
   box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
   border-radius: 22px;
   border: none;
-
   justify-items: baseline;
   align-items: baseline;
 }
@@ -241,8 +263,9 @@ nav {
 }
 
 #footer {
-  margin: 2rem 0 0 0;
-  grid-area: footer;
+  margin: auto auto 0 auto;
+  width: 100%;
+  align-self: flex-end;
   background-color: #0a3871;
   height: 50px;
   display: flex;
@@ -255,19 +278,18 @@ nav {
 
 /* ########################## MEDIA QUERIES ######################### */
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   #base {
-    grid-template-columns: 98%;
-    gap: 2%;
-    grid-template-rows: auto auto 1fr;
+    grid-template-columns: 100%;
+
+    grid-template-rows: auto auto;
     grid-template-areas:
       'message'
-      'result'
-      'footer';
-    align-items: center;
+      'result';
     justify-self: center;
-    align-content: center;
+    align-content: space-between;
     justify-content: center;
+    height: 100%;
   }
 
   #result {
@@ -297,15 +319,12 @@ nav {
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
     border-radius: 22px;
     border: none;
-
     justify-items: baseline;
     align-items: baseline;
   }
 
   #message {
     grid-area: message;
-    /* border: solid 1px blue; */
-
     height: 500px;
     display: grid;
   }
@@ -342,7 +361,6 @@ nav {
     grid-area: msgDes;
     display: none;
     border: none;
-    /* border: solid 1px blue; */
     margin: 0 auto;
     align-items: center;
     padding: 0.7em;
@@ -415,9 +433,5 @@ nav {
 
   #vacio {
     font-size: 0.8em;
-  }
-
-  #footer {
-    margin: 0;
   }
 }
