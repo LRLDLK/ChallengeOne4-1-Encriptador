@@ -361,7 +361,7 @@ nav {
 
   #alerta {
     grid-area: alerta;
-    font-size: 0.8em;
+    font-size: 0.9em;
     transition: color 0.1s linear 0.2s;
     font-weight: 600;
     text-align: center;
@@ -446,7 +446,7 @@ nav {
   }
 
   #vacio {
-    font-size: 0.8em;
+    font-size: 0.9em;
   }
 
   #body {
