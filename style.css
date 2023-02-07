@@ -399,7 +399,7 @@ nav {
 
   #input {
     font-size: 0.9em;
-    height: 150px;
+    height: 220px;
   }
 
   @media (max-width: 370px) {
@@ -421,14 +421,14 @@ nav {
 
   #input {
     font-size: 0.9em;
-    height: 90px;
+    height: 120px;
   }
   #msgDes {
     font-size: 0.9em;
   }
 
   #message {
-    height: 260px;
+    height: 300px;
   }
   #result {
     align-items: center;
